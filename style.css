@@ -12,6 +12,10 @@ nav {
     height: 20px;
 }
 
+.linha-nav {
+    display: none;
+}
+
 nav a {
     color: white;
     text-decoration: none;
@@ -20,12 +24,16 @@ nav a {
     margin-top: 5px;
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
 .background {
     display: flex;
     align-items: center;
 }
 
-.background:hover{
+.background:hover {
     background-color: #5f636841;
     width: 45px;
     height: 45px;
@@ -67,7 +75,8 @@ nav a {
     border-radius: 30px;
     line-height: 60px;
     background: transparent;
-    width: 650px;
+    width: 90%;
+    max-width: 650px;
     height: 50px;
     outline: none;
     display: flex;
@@ -86,7 +95,8 @@ nav a {
     border: none;
     background-color: transparent;
     line-height: 60px;
-    width: 750px;
+    width: 90%;
+    max-width: 650px;
     height: 60px;
     padding-left: 15px;
     font-size: 1.1em;
@@ -94,7 +104,9 @@ nav a {
     color: white;
 }
 
-#lupa, #teclado, #camera{
+#lupa,
+#teclado,
+#camera {
     width: 25px;
     height: 25px;
     cursor: pointer;
@@ -102,6 +114,7 @@ nav a {
 
 #lupa {
     padding-left: 20px;
+    cursor: default;
 }
 
 #camera {
@@ -121,6 +134,11 @@ nav a {
     border-radius: 5px;
     margin: 0 7px;
     cursor: pointer;
+}
+
+.botoes:hover {
+    border: 1px solid rgba(255, 255, 255, 0.192);
+    padding: 12px;
 }
 
 #linha {
@@ -156,13 +174,8 @@ footer {
     cursor: pointer;
 }
 
-.lista2 {
-    list-style: none;
-    display: inline-block;
-    padding: 0 10px;
-    padding-bottom: 0;
-    justify-self: end;
-    cursor: pointer;
+.lista:hover {
+    text-decoration: underline;
 }
 
 hr {
@@ -171,5 +184,105 @@ hr {
 
 footer p {
     padding-left: 25px;
-    cursor: pointer;
+    display: inline-block;
+}
+
+@media (max-width: 778px) {
+    #logo {
+        width: 450px;
+        height: 200px;
+    }
+
+    #teclado,
+    #camera {
+        display: none;
+    }
+
+    .botoes {
+        display: none;
+    }
+
+    .flex-container2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .div-lista:nth-child(2) {
+        text-align: center;
+        margin-top: -20px;
+    }
+}
+
+@media (max-width: 600px) {
+    #logo {
+        width: 430px;
+        height: 190px;
+    }
+
+    .flex-container2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 470px) {
+    .nav-hamburguer {
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+        cursor: pointer;
+    }
+
+    .linha-nav {
+        display: block;
+        width: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.74);
+        margin: 2px 0;
+    }
+
+    nav a {
+        display: none;
+    }
+
+    #logo {
+        width: 330px;
+        height: 150px;
+    }
+
+    .procura {
+        margin-top: 20px;
+        line-height: 40px;
+        height: 40px;
+    }
+
+    .procura input {
+        line-height: 40px;
+        width: 85%;
+        height: 40px;
+        font-size: 1em;
+    }
+
+    .flex-container2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer p {
+        font-size: 0.9em;
+        padding-left: 17px;
+    }
+
+    .div-lista {
+        text-align: center;
+        font-size: 0.9em;
+        padding: 15px 0;
+    }
+
+    .div-lista:nth-child(2) {
+        text-align: center;
+        margin-top: -20px;
+    }
 }
